@@ -1,23 +1,21 @@
-import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
-
-import Title from "components/Title";
-
+import { useRef, useState, useEffect } from "react";
 import {
   addEmail,
   addPassword,
   isLogin,
   addNickName,
   editAllUserState,
+  userInfoReset,
 } from "redux/userReducer";
 import store from "redux/store";
-import { useAppDispatch } from "redux/hooks";
+import { useAppDispatch, useAppSelector } from "redux/hooks";
+import Title from "components/Title";
 import { addUser, editUser, findIsSameTrue } from "redux/dataReducer";
-
 import { Container } from "styles/styled-components/Container";
 import { Button } from "styles/styled-components/Button";
 import { Input } from "styles/styled-components/Input";
@@ -95,7 +93,12 @@ const Login = () => {
       <Title title="Login" />
       <Container page="login">
         <Div purpose="login" className="login__header">
-          <Image src="/tirrilee-logo.png" alt="logo" width={270} height={75} />
+          <Span purpose="logo">
+            오늘의{" "}
+            <Span purpose="logo" color="blue">
+              숨
+            </Span>
+          </Span>
         </Div>
         <form>
           <Div purpose="login">

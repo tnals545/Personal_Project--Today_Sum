@@ -1,10 +1,8 @@
 import Image from "next/image";
 import router from "next/router";
-
 import store from "redux/store";
 import { useAppDispatch } from "redux/hooks";
 import { prodInfoReset } from "redux/prodReducer";
-
 import { Span } from "styles/styled-components/Span";
 import { Div } from "styles/styled-components/Div";
 
@@ -18,7 +16,7 @@ const NavBar = ({ menu }: Props) => {
   return (
     <Div purpose="navBar">
       <div>
-        <Image
+        <Span
           onClick={() => {
             if (store.getState().userInfo.isLogin) {
               router.push("/prod-list/전체");
@@ -26,11 +24,13 @@ const NavBar = ({ menu }: Props) => {
               router.push("/");
             }
           }}
-          src="/tirrilee-logo.png"
-          alt="logo"
-          width={106}
-          height={30}
-        />
+          purpose="logoNavbar"
+        >
+          오늘의{" "}
+          <Span purpose="logoNavbar" color="blue">
+            숨
+          </Span>
+        </Span>
       </div>
       <div>
         <Span
