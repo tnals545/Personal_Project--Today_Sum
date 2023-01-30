@@ -6,7 +6,7 @@ interface Title {
 
 // page title setting
 const Title = ({ title }: Title) => {
-  const pageTitle = `Tirrilee | ${title}`;
+  const pageTitle = `Today Sum | ${title}`;
   return (
     <>
       <Head>
